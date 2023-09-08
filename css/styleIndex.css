@@ -17,3 +17,10 @@ ol{
 ul{
     color: #1d5a83;
 }
+a{
+    color: #D65A31;
+text-decoration: none;
+}
+a:hover{
+    font-weight:bold;
+}
