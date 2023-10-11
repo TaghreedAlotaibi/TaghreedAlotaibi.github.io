@@ -1,72 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>JavaScript example 1</title>
-<meta charset="utf-8">
-<script>
-        function add(){
-        var num1=parseInt(document.getElementById('n1').value);
-        var num2=parseInt(document.getElementById('n2').value);
-        var result=num1+num2;
-        document.getElementById('res').innerHTML=result;
-                }
+    <meta charset="UTF-8">
+    <title>Sheet6</title>
+     <style>
+        body {
+            padding: 20px;
+            font-size: 20px;
+            }
+
+            .dark-mode {
+             background-color: black;
+            color: white;
+            }
+
+            .buttonStyle{
+            right: 12px;
+            position: absolute;
+            top: 1px;
+            padding: 22px;
+            right: 12px;
+            }
 
 
-        function mul() {
-        var num1 = parseInt(document.getElementById('n1').value);
-        var num2 = parseInt(document.getElementById('n2').value);
-        var result = num1*num2;
-      document.getElementById('res').innerHTML = result;
+    </style>
+    <script>
+        function myFunction() {
+        var mode = document.body;
+        mode.classList.remove("light-mode");
+        mode.classList.add("dark-mode");
         }
 
-        function sub(){
-        var num1=parseInt(document.getElementById('n1').value);
-        var num2=parseInt(document.getElementById('n2').value);
-        var result=num1-num2;
-        document.getElementById('res').innerHTML=result;
+        function myFunction1() {
+        var mode = document.body;
+        mode.classList.add("light-mode");
+        mode.classList.remove("dark-mode");
         }
 
-        function change(){
-            document.getElementById('n1').style.backgroundColor="red";
-            document.getElementById('n2').style.backgroundColor="red";
-        }
-
-        function changeText(){
-            document.getElementById('nu1').style.color="green";
-            document.getElementById('nu2').style.color="green";
-        }
-
-        function trunOff(){
-            document.getElementById('i').src="image/pic_bulboff.gif";
-        }
-
-        function trunOn(){
-            document.getElementById('i').src="image/pic_bulbon.gif";
-        }
-
-     </script>
-    </head>
-  <body>
-    <form >
-      <label id="nu1" for="n1">number 1:</label>
-      <input type=number id="n1"><br><br>
-      <label id="nu2" for="n2">number 2: </label>
-      <input type=number id="n2"> <br><br>
-      <input type=button onclick="add();"  value="add" >
-      <input type="button"  onclick="mul();" value="multiple">
-      <input type=button   onclick="sub();" value="sub" >
-      <input type=button  onclick="change();"  value="change the background color">
-      <input type=button  onclick="changeText();" value="change the text color">
-    </form>
-    <p id="res"></p>
-    <button onclick="trunOff();">Trun off the light</button>
-    <img id="i" src="image/pic_bulboff.gif">
-    <button  onclick="trunOn();">Trun on the light</button>
+        var myDate = new Date(); 
+        var hour=myDate.getHours();
+        var name;
+        name=window.prompt("please enter your name");
 
 
-  </body>
+        if (hour < 12 )  
+        
+        document.write("Good Morning:"); 
+    
+         if ( hour>=12 ) 
+     { 
+             hour=hour-12;
+    
+        if (hour<6 ) 
+    
+        document.write("Good Afternoon:"); 
+     
+    }
 
+    document.write(name + "<br /><br /> The hour is: ") 
+    document.write( myDate.getHours() ); 
+    </script>
+        </head>
+        <body>
+            <br><br>
+            <div class="buttonStyle">
+            <button onclick="myFunction()">Dark Mode</button>
+            <button onclick="myFunction1()">Light Mode</button>
+            </div>
+            <h1>This is Heading 1</h1>
+            <p>Light mode: body background white and color of the text will be black <br>
+                Dark mode: body background black or darkgray and color of the text will white. <br>
+                By default : the bage is on light mode <br>
+                Note: link the page to your website in github</p>
 
-
-</html>
+       
+            
+        </body>
+        </html>
